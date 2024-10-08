@@ -1,0 +1,8 @@
+# Preço
+preco_unitario = 1.99
+
+# tabela de preços
+print("Tenda Digital - Tabela de Preços")
+for i in range(1, 31):
+    preco_total = preco_unitario * i #pra multiplicar a o valor 1.99 x quantidade de produtos
+    print(f"{i} - R$ {preco_total:.2f}") #:.2f pra ficar bonitinho na tabela kkk

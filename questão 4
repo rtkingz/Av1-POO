@@ -1,0 +1,17 @@
+populacao_A = 80000
+populacao_B = 200000
+
+#taxas
+taxa_A = 0.03  
+taxa_B = 0.015 
+
+#variavel anos definindo a partir de quantos anos contar
+anos = 0
+
+#Loop até que a população A ultrapasse ou iguale a B
+while populacao_A < populacao_B: #pra verificar as condições das populações pra dar continuidade ao codigo 
+    populacao_A *= (1 + taxa_A) # 1 = 100% pra somar 
+    populacao_B *= (1 + taxa_B)
+    anos += 1   #a base pra definir os anos 
+
+print(f"vão ser necessarios {anos} anos para que a população A ultrapasse ou iguale com a população B.")

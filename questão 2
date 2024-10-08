@@ -1,0 +1,17 @@
+# pra definir a quantidade inicial de impares e pares
+pares = 0
+impares = 0
+
+# for limitar o range dos 10 números junto com o input pedindo o valor
+for _ in range(10):
+    numero = int(input("Digite um número inteiro: "))
+    
+    # pra verificar se é par ou ímpar
+    if numero % 2 == 0:
+        pares += 1
+    else:
+        impares += 1
+
+# Mostrando os resultados
+print("Quantidade de números pares:", pares)
+print("Quantidade de números ímpares:", impares)

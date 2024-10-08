@@ -1,0 +1,20 @@
+
+salario = 1000.00
+ano_contratacao = 1995
+ano_final = 2025
+
+# o aumento
+percentual_aumento = 0.015  # 1.5% o percentual
+
+# Loop pelos anos
+for ano in range(ano_contratacao + 1, ano_final + 1):
+    if ano > 1996:
+        percentual_aumento *= 2  # pra dobrar o percentual pq ja passou de 1996
+        if percentual_aumento > 1:  # Limita o aumento a 100%
+            percentual_aumento = 1
+    salario *= (1 + percentual_aumento)  # atualiza o salário
+
+# Resultado com formatação
+print(f"O salário em {ano_final} será de R$ {salario:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.'))
+#replace pra dar os pontos no formato brasileiro bonitinhos no printf
+#usei o X como caracter temporario pra usar pra substituir os pontinho

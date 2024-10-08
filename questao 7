@@ -1,0 +1,19 @@
+def calcular_divida(valor, parcelas):
+    juros_por_parcela = {2: 0, 4: 10, 6: 15, 8: 20, 12: 25} # o numero de parcelas e os supostos '' juros'' por parcela
+    
+    if parcelas not in juros_por_parcela:
+        print("Erro!! -  Escolha entre 2, 4, 6, 8 ou 12.")
+        return
+#calculo das parcelas e valor
+    juros = valor * (juros_por_parcela[parcelas] / 100)
+    valor_total = valor + juros
+    valor_parcela = valor_total / parcelas
+#o print, so nao consegui deixar o ultimo (parcela) quadradinho bonitinho T-T
+    print(f"| {'Dívida':<13} | {'Juros':<13} | {'Parcelas':<20} | {'Parcela':<14} |")
+    print(f"| R$ {valor:<10,.2f} | R$ {juros:<10,.2f} | {parcelas:<19} | R$ {valor_parcela:<13,.2f} |")
+
+#parte de interação do usuario
+valor_divida = float(input("o valor da sua divida é: R$ "))
+quantidade_parcelas = int(input("quer parcelar em quantas X ? (2, 4, 6, 8 ou 12): "))
+calcular_divida(valor_divida, quantidade_parcelas)
+    

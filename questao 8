@@ -1,0 +1,26 @@
+def calcular_nota(respostas, gabarito):
+    return sum(1 for resposta, gabarito in zip(respostas, gabarito) if resposta == gabarito) #usando o zip p as respotas sair juntas bonitinha se if pra comparar com o gabarito 
+
+def main():
+    gabarito = ['R', 'E', 'N', 'A', 'T', 'I', 'N', 'T', 'M', 'J']
+    notas = []
+    
+    while True:
+        respostas = [input(f"Resposta da questão {i+1}: ").strip().upper() for i in range(10)] #usando o  strip.upper para limitar os espaços pra nao bugar
+        acertos = calcular_nota(respostas, gabarito)
+        notas.append(acertos)
+        
+        print(f"Total Correto: {acertos}")
+        
+        if input("Outro aluno? (simbora/tô fora): ").strip().lower() != 'simbora':
+            break
+
+    if notas:
+        print(f"Maior acerto: {max(notas)}")
+        print(f"Menor acerto: {min(notas)}")
+        print(f"Quantos Pariticiparam: {len(notas)}")
+        print(f"Média das notas: {sum(notas) / len(notas):.2f}")
+#usei o lens pra ver quantos numeros de participações teve no sistema
+
+if __name__ == "__main__":
+ main()
